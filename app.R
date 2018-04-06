@@ -14,9 +14,9 @@ ui <- fluidPage(
              ),
           uiOutput('acol'),
           uiOutput('zcol'),
-          uiOutput('acollabel'),
-          uiOutput('zcollabel'),
           uiOutput('linklabel'),
+          #uiOutput('acollabel'),
+          #uiOutput('zcollabel'),
           width=2
     ),
     mainPanel(
@@ -40,6 +40,9 @@ ui <- fluidPage(
         ),
         tabPanel("Plot VisNetwork",
                  visNetworkOutput ("visPlot")
+                 ),
+        tabPanel("Note", 
+                 includeMarkdown("README.md")
                  )
     ),
     width = 10
@@ -48,8 +51,7 @@ ui <- fluidPage(
       img(src='square_icon.png', align = "right-top")
       , id = "input_date_control", class = "panel panel-default", fixed = TRUE
       , draggable = FALSE, top = 'auto', left = 'auto', right = 0, bottom = 0
-      , width = '5%', height = 'auto'
-    )  
+      , width = '5%', height = 'auto')
     
     )
   
@@ -98,7 +100,7 @@ ui <- fluidPage(
         condition = "contents() != NULL",
 
 
-        selectInput('zendlabel', 'ZEnd_Column_Label', names(contents()),selected = NULL)
+        selectInput('zendlabel', 'LABEL NODE Z', names(contents()),selected = NULL)
         )
     })
 
