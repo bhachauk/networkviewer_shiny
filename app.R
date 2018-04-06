@@ -1,6 +1,7 @@
 library(networkD3)
-require(visNetwork, quietly = TRUE)
-library(igraph)
+library(visNetwork)
+library(igraph,warn.conflicts = FALSE)
+library(shiny)
 
 ui <- fluidPage(
     h1("Network Viewer"),
@@ -9,7 +10,7 @@ ui <- fluidPage(
                        accept = c(
                          "text/csv",
                          "text/comma-separated-values,text/plain",
-                         ".csv")
+                         ".csv"),placeholder = "No file selected"
              ),
           uiOutput('acol'),
           uiOutput('zcol'),
@@ -50,6 +51,10 @@ ui <- fluidPage(
   server <- function(input, output,session) {
     
     contents <- reactive({
+      
+      shiny::validate(
+        need(input$file1, "Select a file!")
+      )
 
       inFile <- input$file1
  
@@ -100,7 +105,12 @@ ui <- fluidPage(
         )
     })
      
-     output$outdata <- renderTable({ 
+     output$outdata <- renderTable({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
+       
        inFile <- input$file1
        
        if (is.null(inFile))
@@ -110,6 +120,11 @@ ui <- fluidPage(
 
      
      output$d3plot <- renderSimpleNetwork({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
+       
        inFile <- input$file1
        
        if (is.null(inFile))
@@ -124,6 +139,10 @@ ui <- fluidPage(
 
      
      output$visPlot <- renderVisNetwork({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
        
        inFile <- input$file1
        
@@ -156,6 +175,11 @@ ui <- fluidPage(
      })
      
      output$igraphpaths <- renderText({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
+       
        inFile <- input$file1
        
        if (is.null(inFile))
@@ -167,8 +191,9 @@ ui <- fluidPage(
        paths <- lapply(1:length(l), function(x) as_ids(l[[x]]))
        
        pathdf <- read.csv(text="Nodes")
+       
        #paste(eachpath, collapse='-->' )
-        #paste( paths,sep='-->')
+       #paste( paths,sep='-->')
        Result <- ''
        for (each in paths)
        {
@@ -179,6 +204,11 @@ ui <- fluidPage(
      })
      
      output$igraphplot <- renderPlot({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
+       
        inFile <- input$file1
        
        if (is.null(inFile))
