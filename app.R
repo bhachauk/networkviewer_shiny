@@ -24,8 +24,13 @@ ui <- fluidPage(
         tabPanel("Table View",
                  tableOutput("outdata")
         ),
-        tabPanel("Paths",
+        tabPanel("Paths Map",
+                 downloadButton("downloadPathtxt", "Download as Text"),
                  verbatimTextOutput("igraphpaths")
+        ),
+        tabPanel("Paths Table",
+                 downloadButton("downloadPathcsv", "Download as Csv"),
+                 tableOutput("pathTable")
         ),
         tabPanel("Plot IGraph",
                  plotOutput("igraphplot")
@@ -76,14 +81,14 @@ ui <- fluidPage(
         conditionalPanel(
         condition = "contents() != NULL",
 
-        selectInput('aendlab', 'LABEL NODE A', setdiff(names(contents()),c(input$aend,input$zend)),selected = NULL)
+        selectInput('aendlab', 'LABEL NODE A', names(contents()) ,selected = NULL)
         )
     })
 
     output$zcol <- renderUI({
         conditionalPanel(
         condition = "contents() != NULL",
-        selectInput('zend', 'NODE Z', names(contents())[names(contents())!=input$aend] ,selected = NULL)
+        selectInput('zend', 'NODE Z', names(contents()),selected = NULL)
         )
     })
 
@@ -93,7 +98,7 @@ ui <- fluidPage(
         condition = "contents() != NULL",
 
 
-        selectInput('zendlabel', 'ZEnd_Column_Label', setdiff(names(contents()), c(input$aend,input$aendlab,input$zend)),selected = NULL)
+        selectInput('zendlabel', 'ZEnd_Column_Label', names(contents()),selected = NULL)
         )
     })
 
@@ -101,7 +106,7 @@ ui <- fluidPage(
         conditionalPanel(
         condition = "contents() != NULL",
 
-        selectInput('linklab', 'LINK LABEL', setdiff(names(contents()),c(input$aend,input$aendlab,input$zend,input$zendlabel)),selected = NULL)
+        selectInput('linklab', 'LINK LABEL', names(contents()) ,selected = NULL)
         )
     })
      
@@ -174,7 +179,7 @@ ui <- fluidPage(
                   main = "")
      })
      
-     output$igraphpaths <- renderText({
+     netPathtxt <- reactive({
        
        shiny::validate(
          need(input$file1, "Waiting for file!")
@@ -202,6 +207,57 @@ ui <- fluidPage(
        }
        paste(Result)
      })
+     
+     
+     output$igraphpaths  <- renderText({
+       netPathtxt()
+     })
+     
+     output$downloadPathtxt <- downloadHandler(
+       filename = function(){
+         paste("data-txt-", Sys.Date(), ".txt", sep = "")
+       },
+       content = function(file) {
+         write.table(paste(netPathtxt(),collapse = ''), file,col.names=FALSE,row.names = FALSE)
+       }
+     )
+     
+     paths_dataframe <- reactive({
+       
+       shiny::validate(
+         need(input$file1, "Waiting for file!")
+       )
+       
+       inFile <- input$file1
+       
+       if (is.null(inFile))
+         return(NULL)
+       
+       df <- read.csv(inFile$datapath, header =TRUE)[ ,c(input$aend,input$zend,input$linklab)]
+       net <- graph_from_data_frame(d=df, vertices=NULL, directed=T)
+       l <- unlist(lapply(V(net) , function(x) all_simple_paths(net, from=x)), recursive = F)
+       paths <- lapply(1:length(l), function(x) as_ids(l[[x]]))
+       
+       maxlength = max(lengths(paths))
+       paths2 = lapply(paths, function(x) {length(x) = maxlength; return(x)})
+       paths_df = do.call(rbind, args = paths2)
+       paths_df
+       
+     })
+     
+     output$pathTable <- renderTable({
+       
+       paths_dataframe()
+     })
+     
+     
+     output$downloadPathcsv <- downloadHandler(
+       filename = function() {
+         paste("data-csv-", Sys.Date(), ".csv", sep = "")
+       },
+       content = function(file) {
+         write.csv(paths_dataframe(), file, row.names = FALSE)
+       })
      
      output$igraphplot <- renderPlot({
        
