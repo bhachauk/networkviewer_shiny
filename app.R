@@ -2,6 +2,7 @@ library(networkD3)
 library(visNetwork)
 library(igraph,warn.conflicts = FALSE)
 library(shiny)
+library(rmarkdown)
 
 ui <- fluidPage(
     h1("Network Viewer"),
