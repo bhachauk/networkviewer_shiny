@@ -21,13 +21,7 @@ If you select AEND and ZEND same column, It will show you an error.
 
 > Error: subscript out of bounds
 
-<b> So watch your Inputs </b>
-
-#### <b> PACKAGES </b>
-
-- [igraph](http://kateto.net/networks-r-igraph)
-- [networkD3](https://christophergandrud.github.io/networkD3/)
-- [visNetwork](https://datastorm-open.github.io/visNetwork/)
+<b><font color="red">So watch your Inputs!</font></b>
 
 
 #### <b> SUGGESTION BOX </b>

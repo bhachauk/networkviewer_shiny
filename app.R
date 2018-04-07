@@ -287,3 +287,11 @@ ui <- fluidPage(
   }
   
   shinyApp(ui, server)
+
+
+##### <b> PACKAGES </b>
+
+#- [igraph](http://kateto.net/networks-r-igraph)
+#- [networkD3](https://christophergandrud.github.io/networkD3/)
+#- [visNetwork](https://datastorm-open.github.io/visNetwork/)
+
