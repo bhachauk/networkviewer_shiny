@@ -9,6 +9,7 @@
 - Network viewer initiated with three types of plots (iGraph, D3, visNetwork).
 - Network paths computations added to show all links.
 - Paths table available as data frame can be downloaded as `txt` and `csv`.
+- Note tab added.
 
 #### <b>DATA REQUIREMENTS</b>
 
