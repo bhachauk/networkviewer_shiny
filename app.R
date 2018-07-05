@@ -198,8 +198,6 @@ ui <- fluidPage(
        l <- unlist(lapply(V(net) , function(x) all_simple_paths(net, from=x)), recursive = F)
        paths <- lapply(1:length(l), function(x) as_ids(l[[x]]))
        
-       pathdf <- read.csv(text="Nodes")
-       
        #paste(eachpath, collapse='-->' )
        #paste( paths,sep='-->')
        Result <- ''
@@ -244,6 +242,8 @@ ui <- fluidPage(
        maxlength = max(lengths(paths))
        paths2 = lapply(paths, function(x) {length(x) = maxlength; return(x)})
        paths_df = do.call(rbind, args = paths2)
+       #paths_df <- paths_df[rowSums(is.na(paths_df)) < 1, ]
+       #paths_df <- paths_df[rowSums(is.na(paths_df))< (length(paths_df)-1),]
        paths_df
        
      })

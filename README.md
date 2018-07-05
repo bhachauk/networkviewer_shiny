@@ -2,6 +2,14 @@
 
 > Network Viewer is a simple online tool to make a quick view of a network and view the paths over the network powered R Shiny.
 
+#### Release Notes
+
+###### v1.0
+
+- Network viewer initiated with three types of plots (iGraph, D3, visNetwork).
+- Network paths computations added to show all links.
+- Paths table available as data frame can be downloaded as `txt` and `csv`.
+
 #### <b>DATA REQUIREMENTS</b>
 
 > NV needs Edge list data to construct the network view. Your data should be in `comma seperated values` file like shown below,
