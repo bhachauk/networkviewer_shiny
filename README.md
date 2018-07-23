@@ -37,7 +37,7 @@ If you select AEND and ZEND same column, It will show you an error.
 
 <hr>
 
-<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height="200" align="center"/>
+<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center"/>
 
 #### <b> SUGGESTION BOX </b>
 
