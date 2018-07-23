@@ -47,7 +47,7 @@ If you select AEND and ZEND same column, It will show you an error.
 
 <div class="imgbrd">
 <p align="center">
-<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center"/>
+<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center" border="5"/>
 </p>
 </div>
 
