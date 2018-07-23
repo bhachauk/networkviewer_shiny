@@ -1,13 +1,3 @@
-<style> 
-.imgbrd {
-    border: 5px solid #000000;
-    width : auto;
-    padding: 10px;
-    border-radius: 25px;
-}
-</style>
-
-
 ### <b>NETWORK VIEWER</b>
 
 > Network Viewer is a simple online tool to make a quick view of a network and view the paths over the network powered R Shiny.
@@ -45,11 +35,10 @@ If you select AEND and ZEND same column, It will show you an error.
 
 #### **Online Tool**
 
-<div class="imgbrd">
-<p align="center">
-<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center" border="5"/>
-</p>
-</div>
+<kbd>
+<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center" />
+</kbd>
+
 
 #### <b> SUGGESTION BOX </b>
 
