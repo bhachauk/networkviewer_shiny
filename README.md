@@ -1,6 +1,6 @@
 <style> 
 .imgbrd {
-    border: 1px solid #000000;
+    border: 5px solid #000000;
     width : auto;
     padding: 10px;
     border-radius: 25px;
