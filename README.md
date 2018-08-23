@@ -1,8 +1,10 @@
-### <b>NETWORK VIEWER</b>
+### <b>Network Viewer</b>
+<hr>
 
 > Network Viewer is a simple online tool to make a quick view of a network and view the paths over the network powered R Shiny.
 
 #### Dependencies
+<hr>
 
 [![R](https://img.shields.io/badge/R-3.5.0-blue.svg?longCache=true&style=plastic)](https://www.r-project.org/)
 [![Shiny](https://img.shields.io/badge/Shiny-1.1.0-blue.svg?longCache=true&style=plastic)](https://shiny.rstudio.com/)
@@ -11,6 +13,7 @@
 [![igraph](https://img.shields.io/badge/igraph-1.2.1-blue.svg?longCache=true&style=plastic)](http://igraph.org/r/)
 
 #### Release Notes
+<hr>
 
 ###### v1.0
 
@@ -20,8 +23,10 @@
 - Note tab added.
 
 #### <b>DATA REQUIREMENTS</b>
+<hr>
 
-> NV needs Edge list data to construct the network view. Your data should be in `comma seperated values` file like shown below,
+NV (Network Viewer) needs Edge list data to construct the network view. 
+Your data should be in `comma seperated values` file like shown below,
 
 ```text
 START,DESTINATION,ROUTE
@@ -32,9 +37,10 @@ COIMBATORE,CHENNAI,NH544
 ```
 
 
-#### <b>INSTRUCTION</b>
+#### <b>Instruction</b>
+<hr>
 
-If you select AEND and ZEND same column, It will show you an error.
+If you select `AEND` and `ZEND` same column, It will show you an error.
 
 > Error: subscript out of bounds
 
@@ -54,6 +60,7 @@ If you select AEND and ZEND same column, It will show you an error.
 Tool **[link](https://bhanuchander.shinyapps.io/networkviewer/)**
 
 
-#### <b> SUGGESTION BOX </b>
+#### <b> Suggest</b>
+<hr>
 
 > For suggestions Ping me [here](https://bhanuchander210.github.io)
