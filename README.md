@@ -2,6 +2,14 @@
 
 > Network Viewer is a simple online tool to make a quick view of a network and view the paths over the network powered R Shiny.
 
+#### Dependencies
+
+[![R](https://img.shields.io/badge/R-3.5.0-blue.svg?longCache=true&style=plastic)](https://www.r-project.org/)
+[![Shiny](https://img.shields.io/badge/Shiny-1.1.0-blue.svg?longCache=true&style=plastic)](https://shiny.rstudio.com/)
+[![networkD3](https://img.shields.io/badge/networkD3-0.4-blue.svg?longCache=true&style=plastic)](https://www.rdocumentation.org/packages/networkD3)
+[![visNetwork](https://img.shields.io/badge/visNetwork-2.0.4-blue.svg?longCache=true&style=plastic)](https://datastorm-open.github.io/visNetwork/shiny.html)
+[![igraph](https://img.shields.io/badge/igraph-1.2.1-blue.svg?longCache=true&style=plastic)](http://igraph.org/r/)
+
 #### Release Notes
 
 ###### v1.0
