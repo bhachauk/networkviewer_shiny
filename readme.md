@@ -49,11 +49,8 @@ If you select `AEND` and `ZEND` same column, It will show you an error.
 
 #### **Online Tool**
 
-<p align="center">
-<kbd>
-<img src="https://bhanuchander210.github.io/master_navs/myapps/images/networkviewer.gif" width="400" height=auto align="center" />
-</kbd>
-</p>
+![graph](https://bhanuchander210.github.io/master_navs/myapps/images/networkviewer.gif)
+
 
 R shiny Web Tool : **[link](https://bhanuchander.shinyapps.io/networkviewer/)**
 
