@@ -52,12 +52,12 @@ If you select `AEND` and `ZEND` same column, It will show you an error.
 <p align="center">
 <kbd>
 <a href="https://bhanuchander.shinyapps.io/networkviewer">
-<img src="https://bhanuchander210.github.io/myapps/images/networkviewer.gif" width="400" height=auto align="center" />
+<img src="https://bhanuchander210.github.io/master_navs/myapps/images/networkviewer.gif" width="400" height=auto align="center" />
 </a>
 </kbd>
 </p>
 
-Tool **[link](https://bhanuchander.shinyapps.io/networkviewer/)**
+R shiny Web Tool : **[link](https://bhanuchander.shinyapps.io/networkviewer/)**
 
 
 #### <b> Suggest</b>
