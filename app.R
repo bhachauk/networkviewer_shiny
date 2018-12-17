@@ -11,7 +11,7 @@ ui <- fluidPage(
                        accept = c(
                          "text/csv",
                          "text/comma-separated-values,text/plain",
-                         ".csv"),placeholder = "No file selected"
+                         ".csv"),placeholder= "No file selected"
              ),
           uiOutput('acol'),
           uiOutput('zcol'),
