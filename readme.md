@@ -50,7 +50,7 @@ If you select `AEND` and `ZEND` same column, It will show you an error.
 #### **Online Tool**
 ---
 
-![graph](https://bhanuchander210.github.io/master_navs/myapps/images/networkviewer.gif)
+![graph](https://bhachauk.github.io/master_navs/myapps/images/networkviewer.gif)
 
 ---
 
@@ -60,4 +60,4 @@ R shiny Web Tool : **[link](https://bhanuchander.shinyapps.io/networkviewer/)**
 #### <b> Suggest</b>
 <hr>
 
-> For suggestions Ping me [here](https://bhanuchander210.github.io)
+> For suggestions Ping me [here](https://bhachauk.github.io)
